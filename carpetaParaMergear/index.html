@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="formulario">
+        Nombre: <input type="text" name="nombre" value="Mariano">
+        <br>
+        Apellido: <input type="text" name="apellido" value="Avico">
+        <br>
+    </form>
+    <button onclick="mostrarValores()">Mostrar</button>
+    <div id="valores"></div>
+    <button onclick="mostrar()">MostrarDocumentWrite</button>
+    <script>
+        function mostrarValores() {
+            let formulario = document.forms['formulario'];
+            let texto = '';
+            for (elemento of formulario) {
+                texto += elemento.value + '<br/>';
+            }
+            document.getElementById('valores').innerHTML = texto;
+            //También podemos acceder a los elementos de manera individual
+            let nombre = formulario['nombre'];
+            let apellido = formulario['apellido'];
+            texto = `su nombre es: ${nombre.value} <br/> su apellido es: ${apellido.value}`
+            console.log(texto);
+            document.getElementById('valores').innerHTML = texto;
+
+        }
+            //Utilizando el document.write();El problema de utilizar esto es que se sobrescribe todo lo anterior
+            function mostrar(){
+                document.write('Saludos desde javascript, ups... sobreescribí todo lo anterior'); 
+
+            }
+            
+    </script>
+</body>
+
+</html>
