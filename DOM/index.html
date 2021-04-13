@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+    <title>Ejemplo DOM con javascript</title>
+</head>
+<body>
+    
+    <h1 id="cabecero">Ejemplo DOM con javascript</h1>
+    <p id="parrafo">Saludos!</p>
+    <p class="azul">Saludos!</p>
+    <p class="azul">Saludos!</p>
+    <p class="azul">Saludos!</p>
+    <p class="rojo">Saludos!</p>
+    <script>
+        //Todas las etiquetas, como el h1 o el p son objetos, por lo tanto tienen atributos y métodos;
+        //En esta variable guarda la etiqueta, no el atributo del valor. Este lo tendré que acceder después
+        //con el .innerHTML
+        let cabecero = document.getElementById('cabecero');
+        let valorDeCabecero = document.getElementById('cabecero').innerHTML;
+        let parrafo = document.getElementById('parrafo');
+
+        parrafo.innerHTML = "Nuevo Valor de parrafo";
+        console.log(`Parrafo: ${parrafo.innerHTML}`);
+
+        console.log(cabecero);
+        console.log(valorDeCabecero);
+        
+        
+        //queryselectorall: se especifica la clase y el elemento(etiqueta) que queremos recuperar
+        let elementos = document.querySelectorAll('p.azul');
+
+        console.log(`cantidad de elementos: ${elementos.length}`);
+        for (elemento of elementos){
+            console.log(elemento.innerHTML);
+        }
+        
+    </script>
+</body>
+</html>
