@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nombre: <input type="text" id="nombre">
+    Apellido: <input type="text" id="apellido">
+
+    <script>
+        //Los eventos ahora los hago completamente desde javascript
+        //Con addEventListener se agregan uno o mas eventos al componente que estamos recuperando, en este caso el input
+        //Parametros: el primero es para el tipo de evento y el segundo es la función a realizar cuando este se produzca 
+        let nombre = document.getElementById('nombre').addEventListener('focus', cambiar);
+        function cambiar (evento){
+            console.log(evento);
+            let componente = evento.target;
+            componente.style.background = 'yellow';
+
+        }
+
+
+    </script>
+</body>
+</html>
