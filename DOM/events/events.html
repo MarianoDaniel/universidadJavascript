@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Acá hago referencia a la mista etiqueta h1 con el this y sobreescribo el título al cliquear en ella -->
+    <h1 onclick="cambiarTexto(this)">Manejo del DOM con javascript</h1>
+   
+    <script>
+        function cambiarTexto (titulo){
+            console.log(titulo.innerHTML);
+            titulo.innerHTML = "Cambiamos el título";
+        }
+    </script>
+</body>
+</html>

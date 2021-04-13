@@ -1,2 +1,0 @@
-# universidadJavascript
-Prácticas de javascript
